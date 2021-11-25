@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.9 - 2021-11-25
+* Fix issues when [`obtain_variation_associated_data`](https://developers.kameleoon.com/ruby-sdk.html#obtain_variation_associated_data) and [`obtain_feature_variable`](https://developers.kameleoon.com/ruby-sdk.html#obtain_feature_variable) return wrong values
+* Fix issue when activate_feature[`activate_feature`](https://developers.kameleoon.com/ruby-sdk.html#activate_feature) doesn't send tracking data
+* Fix issue when activate_feature[`obtain_feature_variable`](https://developers.kameleoon.com/ruby-sdk.html#obtain_feature_variable) doesn't return JSON values
+* Fix targeting issue when activate_feature[`activate_feature`](https://developers.kameleoon.com/ruby-sdk.html#activate_feature) and trigger_experiment[`trigger_experiment`](https://developers.kameleoon.com/ruby-sdk.html#trigger_experiment) can be not target.
+* Fix issue when tracking request sends many times instead of once. Related to activate_feature[`activate_feature`](https://developers.kameleoon.com/ruby-sdk.html#activate_feature) and trigger_experiment[`trigger_experiment`](https://developers.kameleoon.com/ruby-sdk.html#trigger_experiment)
+* Fix wording: Correct VariationConfigurationNotFound wording.
+
 ## 1.0.8
 * Fix issue: Allow Integer for default visitorCode.
 
