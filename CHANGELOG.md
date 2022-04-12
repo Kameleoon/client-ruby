@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 - 2022-04-12
+* Added method for retrieving data from remote source: [`retrieve_data_from_remote_source`](https://developers.kameleoon.com/ruby-sdk.html#retrieve_data_from_remote_source)
+
 ## 1.0.10 - 2022-02-28
 * Added support of multi-environment for feature flags, Related to [`activate_feature`](https://developers.kameleoon.com/ruby-sdk.html#activate_feature), [`obtain_feature_variable`](https://developers.kameleoon.com/ruby-sdk.html#obtain_feature_variable)
 * Fixed issue with multiple adding CustomData with different values. Related to [`add_data`](https://developers.kameleoon.com/ruby-sdk.html#adddata)
