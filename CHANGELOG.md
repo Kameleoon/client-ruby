@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.1 - 2022-07-04
+* Fixed using default value if [`actions_configuration_refresh_interval`](https://developers.kameleoon.com/ruby-sdk.html#additional-configuration) parameter is not set in config file
+
 ## 1.1.0 - 2022-04-12
 * Added method for retrieving data from remote source: [`retrieve_data_from_remote_source`](https://developers.kameleoon.com/ruby-sdk.html#retrieve_data_from_remote_source)
 
