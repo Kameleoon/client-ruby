@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.2 - 2022-07-08
+* Significantly improved SDK stability
+
 ## 1.1.1 - 2022-07-04
 * Fixed using default value if [`actions_configuration_refresh_interval`](https://developers.kameleoon.com/ruby-sdk.html#additional-configuration) parameter is not set in config file
 
