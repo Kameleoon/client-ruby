@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file.
     - Added Kameleoon [`Device`](https://developers.kameleoon.com/ruby-sdk.html#device) data. Possible values are: **PHONE**, **TABLET**, **DESKTOP**.
     - Added possibility to set [`UserAgent`](https://developers.kameleoon.com/ruby-sdk.html#useragent).
     - Removed Kameleoon `Interest` data.
+* Renaming of exceptions:
+    - `NotActivated` -> `NotAllocated`
 * Removed blocking mode of SDK.
 * Added support of `is among the values` operator for Custom Data
 * Added support for **Experiment** & **Exclusive Campaign** conditions. Related to [`trigger_experiment`](https://developers.kameleoon.com/ruby-sdk.html#trigger_experiment)
