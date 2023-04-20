@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.1.0 - 2023-04-20
+* Added update campaigns and feature flag configurations instantaneously with Real-Time Streaming Architecture: [`Documentation`](https://developers.kameleoon.com/ruby-sdk.html#streaming) or [`Product Updates`](https://www.kameleoon.com/en/blog/real-time-streaming)
+* Added a new methods:
+    - [`on_update_configuration`](https://developers.kameleoon.com/ruby-sdk.html#on_update_configuration) to handle events when configuration data is updated in real time.
+    - [`get_engine_tracking_code`](https://developers.kameleoon.com/ruby-sdk.html#get_engine_tracking_code) which can be used to simplify utilization of hybrid mode
+* Renaming of methods:
+    - `obtain_feature_variable` -> [`get_feature_variable`](https://developers.kameleoon.com/ruby-sdk.html#get_feature_variable)
+    - `retrieve_data_from_remote_source` -> [`get_remote_date`](https://developers.kameleoon.com/ruby-sdk.html#get_feature_variable)
+* Added possibility for [`CustomData`](https://developers.kameleoon.com/ruby-sdk.html#customdata) to use variable argument list of values
+
 ## 2.0.0 - 2023-02-02
 * Significantly improved configuration load time
 * Added support of new feature flag rules:
