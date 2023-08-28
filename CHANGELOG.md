@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.1.1 - 2023-08-28
+### Features
+* Added new conditions for targeting:
+    - `Visitor Code`
+    - `SDK Language`
+    - [`Page Title & Page Url`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#pageview)
+    - [`Browser`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#browser)
+    - [`Device`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#device)
+    - [`Conversion`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#tracking-conversion)
+### Bug fixes
+* Stability and performance improvements
+
 ## 2.1.0 - 2023-04-20
 * Added update campaigns and feature flag configurations instantaneously with Real-Time Streaming Architecture: [`Documentation`](https://developers.kameleoon.com/ruby-sdk.html#streaming) or [`Product Updates`](https://www.kameleoon.com/en/blog/real-time-streaming)
 * Added a new methods:
