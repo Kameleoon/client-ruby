@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.2.0 - 2023-09-14
+### Features
+* Added [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_remote_visitor_data) method to fetch a visitor's remote data (with an optional capability to add the fetched data to the visitor)
+### Bug fixes
+* Stability and performance improvements
+
 ## 2.1.1 - 2023-08-28
 ### Features
 * Added new conditions for targeting:
