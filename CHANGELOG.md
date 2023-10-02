@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.3.0 - 2023-10-02
+### Features
+* We are pleased to introduce an enhancement that simplifies the configuration of the `Kameleoon::Client`. We have added a configuration option called [`Kameleoon::ClientConfig`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#initializing-the-kameleoon-client). With this option, you don't need an external settings file when you initialize the client. You can apply the new configuration option using the [`KameleoonClientFactory.create`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#create) method.
+
 ## 2.2.0 - 2023-09-14
 ### Features
 * Added [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_remote_visitor_data) method to fetch a visitor's remote data (with an optional capability to add the fetched data to the visitor)
