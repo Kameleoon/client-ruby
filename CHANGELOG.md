@@ -1,6 +1,63 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.0.0 - 2023-12-13
+### Breaking changes
+* Removed all previously deprecated methods and exceptions related to **experiments** (use feature experiments instead):
+  * Methods:
+    - `trigger_experiment`
+    - `get_variation_associated_data`
+    - `get_experiment_list`
+    - `get_experiment_list_for_visitor`
+  * Exceptions:
+    - `ExperimentConfigurationNotFound`
+    - `NotTargeted`
+    - `NotAllocated`
+    - `SiteCodeDisabled`
+* Removed all other methods that were deprecated in 2.x versions:
+    - `obtain_visitor_code`
+    - `activate_feature`
+    - `obtain_variation_associated_data`
+    - `obtain_feature_variable`
+    - `retrieve_data_from_remote_source`
+* Changed the following classes, methods, and exceptions:
+    * Classes:
+        - Renamed `ClientConfig` to [`KameleoonClientConfig`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#initializing-the-kameleoon-client)
+        - Renamed `ClientFactory` to [`KameleoonClientFactory`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#kameleoonclientfactory)
+        - Renamed `Client` to [`KameleoonClient`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#initializing-the-kameleoon-client)
+    * Methods:
+        - Renamed `get_feature_all_variables` method to [`get_feature_variation_variables`](https://developers.kameleoon.com/ruby-sdk.html#get_feature_variation_variables)
+        - Removed `make_from_yaml` method from [`KameleoonClientConfig`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#initializing-the-kameleoon-client). If you used the method please use `read_from_yaml` instead.
+    * Exceptions:
+        - Renamed `VisitorCodeNotValid` to `VisitorCodeInvalid`
+        - Renamed `FeatureConfigurationNotFound` to `FeatureNotFound`
+        - Renamed `VariationConfigurationNotFound` to `FeatureVariationNotFound`
+        - Renamed `CredentialsNotFound` to `ConfigCredentialsInvalid`
+        - Added `SiteCodeIsEmpty` exception, which the [`KameleoonClientFactory.create`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#create) method raises if the specified site code parameter is `nil` or empty.
+* Changed [configuration fields](https://developers.kameleoon.com/ruby-sdk.html#additional-configuration):
+    - removed `visitor_data_maximum_size` field
+    - renamed `configuration_refresh_interval` to [`refresh_interval_minute`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#additional-configuration)
+    - renamed `default_timeout` to [`default_timeout_millisecond`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#additional-configuration)
+    - changed [`client_id`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#additional-configuration) and [`client_secret`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#additional-configuration) to required fields. `Exception::ConfigCredentialsInvalid` is now raised if `client_id` and `client_secret` are not specified.
+* Added new exception [`Exception::FeatureEnvironmentDisabled`] indicating that the feature flag is disabled for certain environments. The following methods can throw the new exception:
+    - [`get_feature_variation_key`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_feature_variation_key)
+    - [`get_feature_variable`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_feature_variable)
+    - [`get_feature_variation_variables`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_feature_variation_variables)
+* Removed `top_level_domain` parameter from [`get_visitor_code`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_visitor_code).
+* Reworked [`CustomData`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#customdata):
+    - Changed the data type of the `id` field to `Integer`
+    - Removed the `value` hash parameter due to the deprecation
+
+### Features
+* Added new parameters for [`KameleoonClientConfig`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#initializing-the-kameleoon-client):
+    - `session_duration_minute`
+    - `top_level_domain`
+* Added [`set_legal_consent`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#set_legal_consent) method to determine the types of data Kameleoon includes in tracking requests. This helps you adhere to legal and regulatory requirements while responsibly managing visitor data. You can find more information in the [Consent management policy](https://help.kameleoon.com/consent-management-policy/).
+* Added new error `Exception::SiteCodeIsEmpty` which is raised if provided site code is `nil` or empty.
+
+### Bug fixes
+* Stability and performance improvements
+
 ## 2.3.0 - 2023-10-02
 ### Features
 * We are pleased to introduce an enhancement that simplifies the configuration of the `Kameleoon::Client`. We have added a configuration option called [`Kameleoon::ClientConfig`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#initializing-the-kameleoon-client). With this option, you don't need an external settings file when you initialize the client. You can apply the new configuration option using the [`Kameleoon::ClientFactory.create`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#create) method.
