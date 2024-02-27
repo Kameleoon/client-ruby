@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.1.1 - 2024-02-27
+### Bug fixes
+* Stability and performance improvements
+
 ## 3.1.0 - 2024-02-22
 ### Features
 * Added support for additional Data API servers across the world for even faster network requests.
