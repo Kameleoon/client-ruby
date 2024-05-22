@@ -20,9 +20,9 @@ All notable changes to this project will be documented in this file.
   - [`Cookie`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#cookie)
   - [`OperatingSystem`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#operatingsystem)
   - [`Geolocation`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#geolocation)
+* Changed the parameter `title` in object [`PageView`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#pageview) to optional.
 ### Bug fixes
 * Stability and performance improvements
-* Changed the parameter `title` in object [`PageView`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#pageview) to optional.
 
 ## 3.1.1 - 2024-02-27
 ### Bug fixes
