@@ -1,6 +1,29 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.2.0 - 2024-05-22
+### Features
+* New targeting conditions are now available (some of them may require [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#getremotevisitordata) pre-loaded data)
+  - Browser Cookie
+  - Operating System
+  - IP Geolocation
+  - Kameleoon Segment
+  - Target Feature Flag
+  - Previous Page
+  - Number of Page Views
+  - Time since First Visit
+  - Time since Last Visit
+  - Number of Visits Today
+  - Total Number of Visits
+  - New or Returning Visitor
+* New Kameleoon Data types were introduced:
+  - [`Cookie`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#cookie)
+  - [`OperatingSystem`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#operatingsystem)
+  - [`Geolocation`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#geolocation)
+### Bug fixes
+* Stability and performance improvements
+* Changed the parameter `title` in object [`PageView`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#pageview) to optional.
+
 ## 3.1.1 - 2024-02-27
 ### Bug fixes
 * Stability and performance improvements
