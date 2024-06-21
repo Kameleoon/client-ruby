@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.3.0 - 2024-06-21
+### Features
+* The [Likelihood to convert](https://developers.kameleoon.com/feature-management-and-experimentation/using-visit-history-in-feature-flags-and-experiments) targeting condition is now available. Pre-loading the data is required using [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_remote_visitor_data) with the `kcs` parameter set to `true`.
+* Added [`get_active_features`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#getactivefeatures) method. It retrieves information about the active feature flags that are available for a specific visitor code. This method replaces the deprecated [`get_active_feature_list_for_visitor`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#getactivefeaturelistforvisitor) method.
+
 ## 3.2.0 - 2024-05-22
 ### Features
 * New targeting conditions are now available (some of them may require [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#getremotevisitordata) pre-loaded data)
