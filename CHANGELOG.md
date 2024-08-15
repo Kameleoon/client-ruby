@@ -1,6 +1,31 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.4.0 - 2024-08-15
+### Features
+* Improved the tracking mechanism to consolidate multiple visitors into a single request. The new approach combines information on all affected visitors into one request, which is sent once per interval.
+* Added a new parameter `instant` of the [`flush`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#flush) method. If the parameter's value is `true` the visitor's data is tracked instantly. Otherwise, the visitor's data will be tracked with next tracking interval. Default value of the parameter is `false`.
+* Added new configuration parameter `tracking_interval_millisecond` to [`KameleoonClientConfig`](https://developers.kameleoon.com/ruby-sdk.html#initialize-the-client) and the [configuration](https://developers.kameleoon.com/ruby-sdk.html#configure-the-client) file, which is used to set interval for tracking requests. Default value is `1000` milliseconds.
+* New Kameleoon Data type [`UniqueIdentifier`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#uniqueidentifier) is introduced. It will be used in all methods instead of `is_unique_identifier` parameter. All usages of the `is_unique_identifier` parameter in the methods are marked as deprecated:
+    - [`flush`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#flush)
+    - [`track_conversion`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#track_conversion)
+    - [`get_feature_variation_key`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_feature_variation_key)
+    - [`get_feature_variable`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_feature_variable)
+    - [`feature_active?`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#feature_active)
+    - [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_remote_visitor_data)
+* Enhanced [logging](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#logging):
+  - Introduced [log levels](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#log-levels):
+    - `NONE`
+    - `ERROR`
+    - `WARNING`
+    - `INFO`
+    - `DEBUG`
+  - Added support for [custom logger](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#custom-handling-of-logs) implementations.
+* Changed the parameter `verbose_mode` in object [`KameleoonClientConfig`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#configure-the-client) the deprecated.
+### Bug fixes
+* Resolved an issue where the [`flush(nil, is_unique_identifier)`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#flush) method was incorrectly sending requests with `is_unique_identifier` applied to each visitor. Now, `is_unique_identifier` is only considered if `visitor_code` is provided and not nil.
+* Fixed an issue that caused duplicate entries in feature flag results for both anonymous and authorized/identified visitors during data reconciliation. This problem occurred when custom data of type mapping ID was not consistently sent for all sessions.
+
 ## 3.3.0 - 2024-06-21
 ### Features
 * The [Likelihood to convert](https://developers.kameleoon.com/feature-management-and-experimentation/using-visit-history-in-feature-flags-and-experiments) targeting condition is now available. Pre-loading the data is required using [`get_remote_visitor_data`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_remote_visitor_data) with the `kcs` parameter set to `true`.
