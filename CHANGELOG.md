@@ -1,6 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.5.0 - 2024-10-04
+### Features
+* Introduced new evaluation methods for clarity and improved efficiency when working with the SDK:
+  - [`get_variation`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_variation)
+  - [`get_variations`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_variations)
+* These methods replace the deprecated ones:
+  - [`get_feature_variation_key`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_feature_variation_key)
+  - [`get_feature_variable`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_feature_variable)
+  - [`get_active_features`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_active_features)
+  - [`get_feature_variation_variables`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_feature_variation_variables)
+* A new version of the [`feature_active?`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#feature_active) method now includes an optional `track` parameter, which controls whether the assigned variation is tracked (default: `true`).
+* Enhanced top-level domain validation within the SDK. The implementation now includes automatic trimming of extraneous symbols and provides a [warning](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#log-levels) when an invalid domain is detected.
+* Enhanced the [`get_engine_tracking_code`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#getenginetrackingcode) method to properly handle `JS` and `CSS` variables.
+
 ## 3.4.0 - 2024-08-15
 ### Features
 * Improved the tracking mechanism to consolidate multiple visitors into a single request. The new approach combines information on all affected visitors into one request, which is sent once per interval.
