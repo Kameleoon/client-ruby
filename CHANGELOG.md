@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.6.0 - 2024-11-14
+### Features
+* Introduced a new `visitor_code` parameter to [`RemoteVisitorDataFilter`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#using-parameters-in-get_remote_visitor_data). This parameter determines whether to use the `visitor_code` from the most recent previous visit instead of the current `visitor_code`. When enabled, this feature allows visitor exposure to be based on the retrieved `visitor_code`, facilitating [cross-device reconciliation](https://developers.kameleoon.com/core-concepts/cross-device-experimentation/). Default value of the parameter is `true`.
+### Bug fixes
+* Fixed an issue with the [`Page URL`](https://developers.kameleoon.com/feature-management-and-experimentation/using-visit-history-in-feature-flags-and-experiments/#benefits-of-calling-getremotevisitordata) and [`Page Title`](https://developers.kameleoon.com/feature-management-and-experimentation/using-visit-history-in-feature-flags-and-experiments/#benefits-of-calling-getremotevisitordata) targeting conditions, where the condition evaluated all previously visited URLs in the session instead of only the current URL, corresponding to the latest added [`PageView`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#pageview).<br/>
+**NOTE**: This change may impact your existing targeting. Please review your targeting conditions to ensure accuracy.
+
 ## 3.5.0 - 2024-10-04
 ### Features
 * Introduced new evaluation methods for clarity and improved efficiency when working with the SDK:
