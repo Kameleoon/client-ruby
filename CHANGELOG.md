@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.6.1 - 2024-11-20
+### Bug fixes
+* Resolved an issue where the validation of [top-level domains](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#configure-the-client) for `localhost` resulted in incorrect failures. The SDK now accepts the provided domain without modification if it is deemed invalid and logs an [error](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#log-levels) to notify you of any issues with the specified domain.
+
 ## 3.6.0 - 2024-11-14
 ### Features
 * Introduced a new `visitor_code` parameter to [`RemoteVisitorDataFilter`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#using-parameters-in-get_remote_visitor_data). This parameter determines whether to use the `visitor_code` from the most recent previous visit instead of the current `visitor_code`. When enabled, this feature allows visitor exposure to be based on the retrieved `visitor_code`, facilitating [cross-device reconciliation](https://developers.kameleoon.com/core-concepts/cross-device-experimentation/). Default value of the parameter is `true`.
