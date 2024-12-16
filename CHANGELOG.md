@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.7.0 - 2024-12-16
+### Features
+* Added support for **simulated** variations.
+* Added the [`set_forced_variation()`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#set_forced_variation) method. This method allows explicitly setting a forced variation for a visitor, which will be applied during experiment evaluation.
+### Bug fixes
+* Fixed an issue where the [`Variation.active?`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#variation) method raised `NameError`.
+
 ## 3.6.1 - 2024-11-20
 ### Bug fixes
 * Resolved an issue where the validation of [top-level domains](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#configure-the-client) for `localhost` resulted in incorrect failures. The SDK now accepts the provided domain without modification if it is deemed invalid and logs an [error](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#log-levels) to notify you of any issues with the specified domain.
