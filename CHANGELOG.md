@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.12.0 - 2025-04-02
+### Features
+* Added support for new conditions:
+    - Exclusive Campaign
+    - Experiment
+    - Personalization
+
 ## 3.11.0 - 2025-03-24
 ### Features
 * Added new optional parameters `negative` and `metadata` to the [`track_conversion`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#track_conversion) method.
