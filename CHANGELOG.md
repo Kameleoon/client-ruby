@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.16.0 - 2025-08-29
+### Features
+* Added an `overwrite` flag to [`CustomData`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#customdata), used as the `overwrite` parameter during tracking.
+* [`CustomData`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#customdata) can now be created using a `name`, in addition to the existing method of using an `index`.
+
 ## 3.15.0 - 2025-07-23
 ### Features
 * Added the [`evaluate_audiences`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#evaluate_audiences) method. This method iterates over all Audiences Explorer segments, evaluates each one, and tracks the segments for which the visitor is targeted using the [`TARGETINGSEGMENT`](https://developers.kameleoon.com/apis/data-api-rest/all-endpoints/post-visit-events/) event.
