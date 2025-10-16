@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.16.1 - 2025-10-16
+### Bug fixes
+* Fixed an issue where [Geolocation](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#geolocation) data was tracked incorrectly.
+
 ## 3.16.0 - 2025-08-29
 ### Features
 * Added an `overwrite` flag to [`CustomData`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#customdata), used as the `overwrite` parameter during tracking.
