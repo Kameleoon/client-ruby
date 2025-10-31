@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.16.2 - 2025-10-31
+### Bug fixes
+* Fixed an issue where [`Conversion`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#conversion)'s metadata initialized with a name was not tracked.
+
 ## 3.16.1 - 2025-10-16
 ### Bug fixes
 * Fixed an issue where [Geolocation](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#geolocation) data was tracked incorrectly.
