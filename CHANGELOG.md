@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.17.0 - 2025-11-21
+### Features
+* Introduced a new [`get_data_file`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_data_file) method. This method returns the current SDK configuration (also known as the **data file**) used for evaluation and targeting. It is **not** intended for production use to fetch variations for every feature flag in the returned list, as it is not optimized for performance. For that purpose, use [`get_variations`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_variations) instead. `get_data_file` is mainly useful for debugging or QA, for example to let internal users manually select a variant for a specific feature flag in production.
+* Updated evaluation and tracking logic to comply with GDPR requirements when consent is not given:
+    - If behavior is **partially blocked**, the default variation will be returned.
+    - If behavior is **completely blocked**, an exception will be thrown.
+
 ## 3.16.2 - 2025-10-31
 ### Bug fixes
 * Fixed an issue where [`Conversion`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#conversion)'s metadata initialized with a name was not tracked.
