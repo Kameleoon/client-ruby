@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.17.1 - 2025-12-24
+### Bug fixes
+* Fixed an issue where **legal consent** was not taken into account during holdout evaluation.
+
 ## 3.17.0 - 2025-11-21
 ### Features
 * Introduced a new [`get_data_file`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_data_file) method. This method returns the current SDK configuration (also known as the **data file**) used for evaluation and targeting. It is **not** intended for production use to fetch variations for every feature flag in the returned list, as it is not optimized for performance. For that purpose, use [`get_variations`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk#get_variations) instead. `get_data_file` is mainly useful for debugging or QA, for example to let internal users manually select a variant for a specific feature flag in production.
