@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.17.2 - 2026-01-21
+### Bug fixes
+* Refactored the `dispose` method to accept the required arguments, resolving analyzer warnings introduced in [Ruby 3.4+](https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/).
+
 ## 3.17.1 - 2025-12-24
 ### Bug fixes
 * Fixed an issue where **legal consent** was not taken into account during holdout evaluation.
