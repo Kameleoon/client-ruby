@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.17.3 - 2026-01-22
+### Bug fixes
+* Resolved analyzer warnings introduced by stricter rules in [Ruby 3.4+](https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/).
+
 ## 3.17.2 - 2026-01-21
 ### Bug fixes
 * Refactored the `dispose` method to accept the required arguments, resolving analyzer warnings introduced in [Ruby 3.4+](https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/).
