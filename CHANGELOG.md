@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.18.0 - 2026-02-13
+### Features
+* Updated the allowed range for the [`trackingInterval`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#additional-configuration). The new range is from **`1000` ms** (default) to **`5000` ms**, allowing a reduction in the number of tracking requests.
+* Introduced a new `track` parameter for [`addData`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#add_data). When set to `false`, the data is stored locally and used only for targeting evaluation; it is not sent to the Data API, helping to prevent duplicate data from being recorded. The default value is `true`. This behavior is consistent with the `track` parameter used in evaluation methods such as [`getVariation`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#get_variation).
+* Introduced support for the Kameleoon [`ApplicationVersion`](https://developers.kameleoon.com/feature-management-and-experimentation/web-sdks/ruby-sdk/#applicationversion) data type, allowing the visitor’s application version to be set and used in targeting evaluation.
+
+
 ## 3.17.3 - 2026-01-22
 ### Bug fixes
 * Resolved analyzer warnings introduced by stricter rules in [Ruby 3.4+](https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/).
